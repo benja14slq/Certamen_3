@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'miapp/css/estilos.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Eventos</title>
+</head>
+<body>
+    <header>
+            <img src="{% static 'miapp/Imagenes/LogoUSM.png' %}" id="logo">
+    </header>
+    <div id="calendario">
+        
+    </div>
+    <div id="boton" class="dropdown d-flex">
+        <button id="boton1" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Segmento
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+        <button id="boton2" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tipo
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <table id="tabla" class="table table-bordered">
+            <tr>
+                <td colspan="5" class="text-center"><strong>Actividades</strong></td>
+            </tr>
+            <tr>
+                <td style="width: 40%;" class="text-center"><strong>Hito</strong></td>
+                <td style="width: 15%;" class="text-center"><strong>Fecha Inicio</strong></td>
+                <td style="width: 15%;" class="text-center"><strong>Fecha Término</strong></td>
+                <td style="width: 15%;" class="text-center"><strong>Tipo</strong></td>
+                <td style="width: 15%;" class="text-center"><strong>Segmento</strong></td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
