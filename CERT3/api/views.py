@@ -7,18 +7,24 @@ from .serializers import EventoSerializer
 
 class EventoViewSet(viewsets.ModelViewSet):
     serializer_class = EventoSerializer
+    queryset = Evento.objects.all()
 
     def get_queryset(self):
         queryset = Evento.objects.all()
-        year = self.request.query_params.get('year', None)
-        type = self.request.query_params.get('type', None)
-        segment = self.request.query_params.get('segment', None)
+        año = self.request.query_params.get('año', None)
+        tipo = self.request.query_params.get('tipo', None)
+        segmento = self.request.query_params.get('segmento', None)
 
-        if year:
-            queryset = queryset.filter(start_date__year=year)
-        if type:
-            queryset = queryset.filter(type=type)
-        if segment:
-            queryset = queryset.filter(segment=segment)
+        try:
+            if año:
+                queryset = queryset.filter(fecha_inicio__year=año)
+            if tipo:
+                queryset = queryset.filter(tipo=tipo)
+            if segmento:
+                queryset = queryset.filter(segmento=segmento)
+        except ValueError:
+            queryset = Evento.objects.none()
+        
+        queryset = queryset.order_by('fecha_inicio')
 
         return queryset
