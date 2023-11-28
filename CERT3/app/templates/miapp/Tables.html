@@ -18,8 +18,8 @@
           <td>{{ evento.fecha_termino }}</td>
           <td>{{ evento.tipo }}</td>
           <td>
-            {% for segmento in segmentos %}
-              {{ segmento.segmento_nombre }}
+            {% for segmento in evento.segmento.all %}
+              {{ segmento.segmento_nombre}} 
             {% endfor %}
         </td>
       </tr>
