@@ -32,32 +32,36 @@
         </article>
         
         <article class="row">
-
             <div class="col-6">
                 <div class="dropdown menu-desp ">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSegmentos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Segmentos
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownSegmentos">
-                        {% for segmento in segmentos %}
-                            <a class="dropdown-item" href="#">{{ segmento.segmento_nombre }}</a>
-                        {% endfor %}
-                    </div>
+                    <form method="get" action="{% url 'pagina' %}">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSegmentos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Segmentos
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownSegmentos">
+                            {% for segmento in segmentos %}
+                                <button type="submit" class="dropdown-item" name="segmento" value="{{ segmento.segmento_nombre }}">{{ segmento.segmento_nombre }}</button>
+                            {% endfor %}
+                        </div>
+                    </form>
                 </div>
-            </div>
+            </div>            
 
             <div class="col-6">
                 <div class="dropdown menu-desp">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTipos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tipo
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownTipos">
-                        {% for tipo in tipos %}
-                            <a class="dropdown-item" href="#">{{ tipo.0 }}</a>
-                        {% endfor %}
-                    </div>
+                    <form method="get" action="{% url 'pagina' %}">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTipos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tipo
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownTipos">
+                            {% for tipo in tipos %}
+                                <button type="submit" class="dropdown-item" name="tipo" value="{{ tipo.0 }}">{{ tipo.0 }}</button>
+                            {% endfor %}
+                        </div>
+                    </form>
                 </div>
             </div>
+
         </article>
 
         <section class="row">
