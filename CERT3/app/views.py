@@ -1,6 +1,15 @@
 from django.shortcuts import render
+from .models          import Segmento,Evento
 
 # Create your views here.
 
 def pagina(request):
-    return render(request, 'miapp/base.html')
+    segmentos = Segmento.objects.all()
+    tipos     = Evento.TIPO_CHOICES
+
+    data = {
+        'segmentos': segmentos,
+        'tipos': tipos
+        }
+
+    return render(request, 'miapp/base.html',data)

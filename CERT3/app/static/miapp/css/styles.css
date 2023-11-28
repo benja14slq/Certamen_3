@@ -4,33 +4,26 @@
 }
 
 .logo-usm {
-    width: 32vh;
-}
-
-.margen-1 {
-    margin-top: 120px;
-    margin-bottom: 2px;
-}
-
-.margen-2 {
-    margin-bottom: 120px;
+    width: 26vh;
 }
 
 .margen-3 {
-    margin-top: 240px;
+    margin-top: 220px;
 }
 .menu-desp {
-    margin-top: 32px;
-    margin-left: 140px;
-    align-content: center;
-    margin-bottom: 32px;
+    margin-top:     26px;
+    margin-left:    120px;
+    align-content:  center;
+    margin-bottom:  26px;
 }
 
 .titulo {
     color: white;
     background-color: #004B85;
+    margin-bottom: 0;
+    height: 40px;
 }
 
 .fondo {
-    height: 72vh;
+    height: 80vh;
 }
