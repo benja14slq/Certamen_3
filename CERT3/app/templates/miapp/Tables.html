@@ -11,15 +11,19 @@
   </thead>
 
   <tbody>
-    
+    {% for evento in eventos %}
+      <tr>
+          <th scope="row">{{ evento.titulo }}</th>
+          <td>{{ evento.fecha_inicio }}</td>
+          <td>{{ evento.fecha_termino }}</td>
+          <td>{{ evento.tipo }}</td>
+          <td>
+            {% for segmento in segmentos %}
+              {{ segmento.segmento_nombre }}
+            {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
   </tbody>
-  
-    <tr>
-      <th scope="row">1</th>
-      <td>2023-01-01</td>
-      <td>2023-01-10</td>
-      <td>Tipo A</td>
-      <td>Segmento 1</td>
-    </tr>
 
 </table>

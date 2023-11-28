@@ -6,10 +6,12 @@ from .models          import Segmento,Evento
 def pagina(request):
     segmentos = Segmento.objects.all()
     tipos     = Evento.TIPO_CHOICES
+    eventos   = Evento.objects.all()
 
     data = {
         'segmentos': segmentos,
-        'tipos': tipos
+        'tipos'    : tipos,
+        'eventos'  : eventos
         }
 
     return render(request, 'miapp/base.html',data)
